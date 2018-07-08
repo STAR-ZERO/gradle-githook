@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        maven {
+            url "../githook/build/repo"
+        }
+    }
+    dependencies {
+        classpath "com.star-zero.gradle:githook:1.0.1"
+    }
+}
+
+apply plugin: 'com.star-zero.gradle.githook'
+
+githook {
+    gradleCommand = file("gradle_test")
+    hooksDir = file(new File(rootDir, "githook_test/hooks"))
+    hooks {
+        "pre-commit" {
+            task = "lint test"
+            shell = "echo 1"
+        }
+        "pre-push" {
+            task = "someTask"
+            shell = "someShell"
+        }
+    }
+}

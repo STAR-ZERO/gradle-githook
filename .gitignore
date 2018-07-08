@@ -1,0 +1,10 @@
+*.iml
+.gradle
+/.idea
+.DS_Store
+build/
+
+# for Samples
+*/githook_test/hooks/*
+!*/githook_test/hooks/.gitkeep
+
