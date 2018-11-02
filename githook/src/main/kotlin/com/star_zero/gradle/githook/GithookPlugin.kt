@@ -12,7 +12,10 @@ class GithookPlugin : Plugin<Project> {
 
         project.afterEvaluate {
             setupExtensions(project, extension)
-            HookWriter(extension).write()
+            if (extension.hooksDir!!.isDirectory) HookWriter(extension).write()
+            else if (extension.failOnMissingHooksDir) throw GradleException("Can't find hooks directory: " +
+                "${extension.hooksDir}")
+            else log.info("Can't find hooks directory ${extension.hooksDir}, no hooks written")
         }
     }
 
@@ -26,9 +29,5 @@ class GithookPlugin : Plugin<Project> {
             extension.hooksDir = File(project.rootProject.rootDir, ".git/hooks")
         }
         log.debug("hooksDir: ${extension.hooksDir}")
-
-        if (!extension.hooksDir!!.isDirectory) {
-            throw GradleException("Can't find hooks directory: ${extension.hooksDir}")
-        }
     }
 }
