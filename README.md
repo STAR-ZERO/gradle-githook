@@ -36,6 +36,7 @@ plugins {
 githook {
     gradleCommand = file("gradle_test")
     hooksDir = file(new File(rootDir, "githook_test/hooks"))
+    failOnMissingHooksDir = false
     hooks {
         "pre-commit" {
             task = "lint test"
@@ -55,6 +56,9 @@ githook {
 * hooksDir (optional)
 	* Git Hooks directory
 	* Default: `<root_dir>/.git/hooks`
+* failOnMissingHooksDir (optional)
+    * Indicates if the build should fail if the hooks dir does not exist
+    * Default `true`
 * hooks
 	* Git hook script file name. See [document](https://git-scm.com/docs/githooks).
 	*  Gradle task or shell.

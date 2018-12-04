@@ -9,6 +9,7 @@ open class GithookExtension(project: Project) {
 
     var gradleCommand: File? = null
     var hooksDir: File? = null
+    var failOnMissingHooksDir: Boolean = true
 
     val hooks = project.container(Githook::class.java) { name ->
         Githook(name)
