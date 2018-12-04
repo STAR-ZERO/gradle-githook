@@ -15,7 +15,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.star-zero.gradle:githook:1.0.1"
+    classpath "gradle.plugin.com.star-zero.gradle:githook:1.1.0"
   }
 }
 
@@ -26,7 +26,7 @@ or (Gradle 2.1 and later)
 
 ```groovy
 plugins {
-  id "com.star-zero.gradle.githook" version "1.0.1"
+  id "com.star-zero.gradle.githook" version "1.1.0"
 }
 ```
 
