@@ -37,6 +37,7 @@ githook {
     gradleCommand = file("gradle_test")
     hooksDir = file(new File(rootDir, "githook_test/hooks"))
     failOnMissingHooksDir = false
+    createHooksDirIfNotExist = false
     hooks {
         "pre-commit" {
             task = "lint test"
@@ -62,6 +63,9 @@ githook {
 * hooks
 	* Git hook script file name. See [document](https://git-scm.com/docs/githooks).
 	*  Gradle task or shell.
+* createHooksDirIfNotExist
+    * Indicates if hooks directory is missing, create the directory
+    * Default `false`
 
 ## Run
 
