@@ -1,5 +1,5 @@
 plugins {
-    id("com.star-zero.gradle.githook") version "1.0.1"
+    id("com.star-zero.gradle.githook") version "1.2.0"
 }
 
 githook {

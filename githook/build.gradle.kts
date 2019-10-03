@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.star-zero.gradle"
-version = "1.1.0"
+version = "1.2.0"
 
 gradlePlugin {
     (plugins) {
