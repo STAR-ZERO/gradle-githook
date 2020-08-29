@@ -3,7 +3,7 @@ plugins {
     `kotlin-dsl`
     `maven-publish`
     id("org.jlleitschuh.gradle.ktlint") version "4.1.0"
-    id("com.gradle.plugin-publish") version "0.9.10"
+    id("com.gradle.plugin-publish") version "0.12.0"
 }
 
 group = "com.star-zero.gradle"
