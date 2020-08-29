@@ -34,7 +34,10 @@ data class Githook(
         return if (task.isNullOrBlank()) {
             ""
         } else {
-            "$gradleCommand $task\n$CHECK_EXIT_STATUS"
+            """
+            |$(echo "$gradleCommand") $task
+            |$CHECK_EXIT_STATUS
+            """.trimMargin()
         }
     }
 
