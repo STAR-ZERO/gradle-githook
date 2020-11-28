@@ -15,7 +15,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.star-zero.gradle:githook:1.2.1"
+    classpath "com.star-zero.gradle:githook:1.2.1"
   }
 }
 
